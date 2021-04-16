@@ -39,7 +39,8 @@ class info(commands.Cog):
         info_board.add_field(name="debo!coinflip", value="CoinFlip game.", inline=False)
         info_board.add_field(name="debo!joke", value="Makes a joke.", inline=False)
         info_board.add_field(name="debo!mirror", value="Bot mirrors your sentence.", inline=False)
-        info_board.add_field(name="debo!giveaway", value='Only who has "Admin" role can use this command.', inline=False)
+        info_board.add_field(name="debo!giveaway", value='Only who has "Admin" role can use this command.',
+                             inline=False)
         info_board.add_field(name="debo!brokethesentence", value='Brokes the sentence.', inline=False)
         info_board.add_field(name="debo!lenght", value='Give you info about the sentence.', inline=False)
         info_board.add_field(name="debo!minecraft", value='Shows your minecraft profile.', inline=False)
@@ -52,6 +53,7 @@ class info(commands.Cog):
         # Send a message to the mentioned user!
         await user.send(f"**{value}**")
         await user.send(f"||Sent by {ctx.author.display_name} via VX Helper.||")
+
 
 def setup(bot):
     bot.add_cog(info(bot))

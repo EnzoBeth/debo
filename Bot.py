@@ -1,3 +1,6 @@
+# WARNING : I Don't recommend you to touch that part of the code, only edit if you know what you are doing
+#           You can easily break the bot by touching an setting
+
 import discord
 from discord.ext import commands
 
@@ -16,7 +19,7 @@ client = commands.Bot(command_prefix=settings.Prefix, help_command=None, intents
 @client.event
 async def on_ready():
     print("Debo est Prêt !")
-    await client.change_presence(status=discord.Status.dnd, activity=discord.Game(settings.BotStatus))
+    await client.change_presence(status=discord.Status(settings.Statut), activity=discord.Game(settings.BotStatus))
     for cog in cogs:
         try:
             print(f"Changement du cog : {cog}")
