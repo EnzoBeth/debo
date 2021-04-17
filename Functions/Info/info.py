@@ -11,13 +11,15 @@ class info(commands.Cog):
     @commands.command()
     async def info(self, ctx):
         info_board = discord.Embed(
-            title="Debo",
+            title="Debo's Info",
             description="An 100% OpenSource Discord Bot !",
-            colour=discord.Colour.red()
+            colour=discord.Colour.purple()
         )
-        info_board.set_footer(text="An Opensource Bot")
-        info_board.set_author(name="Debo")
-        info_board.add_field(name="Commands", value="Type .help for commands.", inline=True)
+        info_board.set_footer(text="Debo Global Instance, Hosted in France")
+
+        info_board.add_field(name="Commands", value="Type debo!help for commands.", inline=True)
+        info_board.add_field(name="Version", value="2021.416")
+        info_board.add_field(name="Developer", value="EnzoBeth#5673", inline=True)
         await ctx.send(embed=info_board)
 
     # Show user avatar
@@ -29,11 +31,11 @@ class info(commands.Cog):
     @commands.command()
     async def help(self, ctx):
         info_board = discord.Embed(
-            title="Debo",
+            title="Debo's Commands Help",
             colour=discord.Colour.blue()
         )
-        info_board.set_footer(text="Debo")
-        info_board.set_author(name="EnzoBeth")
+        info_board.set_footer(text="Debo Global Instance, Hosted In France")
+
         info_board.add_field(name="debo!avatar", value="Shows your avatar.", inline=False)
         info_board.add_field(name="debo!info", value="Info about bot.", inline=False)
         info_board.add_field(name="debo!coinflip", value="CoinFlip game.", inline=False)
@@ -48,11 +50,7 @@ class info(commands.Cog):
         info_board.add_field(name="debo!wiki", value='Send you the wiki link of requested thing.', inline=False)
         await ctx.send(embed=info_board)
 
-    @commands.command()
-    async def cmds(self, ctx, user: ctx.author, *, value):
-        # Send a message to the mentioned user!
-        await user.send(f"**{value}**")
-        await user.send(f"||Sent by {ctx.author.display_name} via VX Helper.||")
+
 
 
 def setup(bot):
